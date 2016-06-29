@@ -62,6 +62,9 @@ TARGET_TOOLCHAIN_ROOT := prebuilts/gcc/$(strip $(HOST_OS))-x86/aarch64/$(TARGET_
 TARGET_TOOLS_PREFIX := $(TARGET_TOOLCHAIN_ROOT)/bin/$(TARGET_CROSS_COMPILE_PREFIX)
 TARGET_USES_UNCOMPRESSED_KERNEL := false
 
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Kernel
 BOARD_KERNEL_CMDLINE := \
         androidboot.hardware=qcom \
