@@ -41,12 +41,26 @@ on boot
     # Enable sched boost
     write /proc/sys/kernel/sched_boost 1
 
+on early-fs
+    start setup-decrypt
+
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
     disabled
     user root
     group root
     seclabel u:r:recovery:s0
+
+# use decryption libraries from /system if available
+service setup-decrypt /sbin/setup_decrypt
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+#on property:ro.crypto.state=encrypted
+#    start sbinqseecomd
 
 on boot
     start sbinqseecomd
