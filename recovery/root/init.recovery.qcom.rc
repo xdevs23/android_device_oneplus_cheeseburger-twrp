@@ -13,6 +13,11 @@ service sbinqseecomd /sbin/qseecomd
     group root
     seclabel u:r:recovery:s0
 
+service gatekeeperd /sbin/gatekeeperd /data/misc/gatekeeper
+    disabled
+    seclabel u:r:recovery:s0
+
 on boot
     start sbinqseecomd
+    start gatekeeperd
 
