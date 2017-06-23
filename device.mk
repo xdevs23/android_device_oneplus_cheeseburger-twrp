@@ -22,4 +22,7 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
 # TWRP
-PRODUCT_COPY_FILES += $(PLATFORM_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_COPY_FILES += \
+	$(PLATFORM_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab \
+	$(foreach _,$(shell find $(PLATFORM_PATH)/recovery -name '*.so'),\
+		$_:$(subst $(PLATFORM_PATH),$_,))
