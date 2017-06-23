@@ -22,14 +22,6 @@ TARGET_OTA_ASSERT_DEVICE := OnePlus5,oneplus5,op5,A5000
 
 PLATFORM_PATH := device/oneplus/oneplus5
 
-# Optimizations
-POLLY_OPTS := true
-LOCAL_CLANG_LTO := true
-TARGET_MORE_OPTIMIZATION := true
-
-# Use Snapdragon LLVM, if available
-TARGET_USE_SDCLANG := true
-
 BOARD_VENDOR := oneplus
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msm8998
@@ -173,7 +165,7 @@ TARGET_SCREEN_HEIGHT := 1920
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_CRYPTO := true
 #TW_IGNORE_MISC_WIPE_DATA := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
+#TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_BRIGHTNESS := 75
