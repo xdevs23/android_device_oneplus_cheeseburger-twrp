@@ -1,10 +1,12 @@
 on init
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
+    mkdir /usb_otg
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
+    start sbinqseecomd
 
 # separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
@@ -13,6 +15,3 @@ service sbinqseecomd /sbin/qseecomd
     user root
     group root
     seclabel u:r:recovery:s0
-
-on property:ro.crypto.state=encrypted
-    start sbinqseecomd
