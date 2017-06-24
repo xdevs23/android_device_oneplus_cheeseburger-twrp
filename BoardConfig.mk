@@ -152,4 +152,6 @@ TW_NEW_ION_HEAP := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 
+ifneq ($(TARGET_INCLUDED_DEVICE_MK),true)
 include $(PLATFORM_PATH)/device.mk
+endif
