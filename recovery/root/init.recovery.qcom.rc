@@ -33,6 +33,8 @@ on fs
     chmod 0664 /dev/ion
     chown system system /dev/ion
     install_keyring
+    setprop ro.crypto.type file
+    setprop ro.crypto.state encrypted
 
 on boot
     # Update foreground and background cpusets
