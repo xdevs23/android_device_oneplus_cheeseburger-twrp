@@ -151,3 +151,5 @@ TW_INCLUDE_FB2PNG := true
 TW_NEW_ION_HEAP := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
+
+include $(PLATFORM_PATH)/device.mk
