@@ -32,6 +32,7 @@ on fs
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
+    export LD_LIBRARY_PATH /sbin:/vendor/lib64:vendor/lib64/hw:/system/vendor/lib64:/system/vendor/lib64/hw
     install_keyring
     setprop ro.crypto.type file
     setprop ro.crypto.state encrypted
