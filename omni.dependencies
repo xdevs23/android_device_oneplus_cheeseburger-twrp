@@ -2,7 +2,7 @@
   {
     "repository": "halogenOS/android_kernel_oneplus_msm8998",
     "target_path": "kernel/oneplus/msm8998",
-    "branch":       "XOS-7.1",
+    "revision": "XOS-7.1",
     "remote": "github"
   },
   {
