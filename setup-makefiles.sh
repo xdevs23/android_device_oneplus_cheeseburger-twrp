@@ -18,7 +18,7 @@
 set -e
 
 # Required!
-DEVICE=oneplus5
+DEVICE=cheeseburger
 VENDOR=oneplus
 
 # Load extractutils and do some sanity checks

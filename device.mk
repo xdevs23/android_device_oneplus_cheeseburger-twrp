@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-PLATFORM_PATH := device/oneplus/oneplus5
+PLATFORM_PATH := device/oneplus/cheeseburger
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal

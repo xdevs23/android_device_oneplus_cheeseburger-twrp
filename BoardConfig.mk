@@ -15,9 +15,9 @@
 # limitations under the License.
 #
 
-TARGET_OTA_ASSERT_DEVICE := OnePlus5,oneplus5,op5,A5000
+TARGET_OTA_ASSERT_DEVICE := OnePlus5,cheeseburger,oneplus5,op5,A5000
 
-PLATFORM_PATH := device/oneplus/oneplus5
+PLATFORM_PATH := device/oneplus/cheeseburger
 
 BOARD_VENDOR := oneplus
 BOARD_USES_QCOM_HARDWARE := true
@@ -63,9 +63,9 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
 ifneq ($(BUILDING_TWRP),)
-TARGET_KERNEL_CONFIG := twrp_oneplus5_defconfig
+TARGET_KERNEL_CONFIG := twrp_cheeseburger_defconfig
 else
-TARGET_KERNEL_CONFIG := oneplus5_defconfig
+TARGET_KERNEL_CONFIG := cheeseburger_defconfig
 endif
 TARGET_FRESHLY_COMPILED_DTBTOOL := true
 TARGET_KERNEL_BUILD_VARIANT := user
