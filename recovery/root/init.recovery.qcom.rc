@@ -1,3 +1,19 @@
+on init
+    export LD_LIBRARY_PATH .:/sbin
+
+    mkdir /system
+    mkdir /system/vendor
+    mkdir /system/vendor/lib64
+    mkdir /system/vendor/lib64/hw
+
+on late-init
+    symlink /vendor/lib64/libQSEEComAPI.so /system/vendor/lib64/libQSEEComAPI.so
+    symlink /vendor/lib64/keystore.msm8998.so /system/vendor/lib64/hw/keystore.msm8998.so
+    symlink /vendor/lib64/gatekeeper.msm8998.so /system/vendor/lib64/hw/gatekeeper.msm8998.so
+
+on restore-data
+   restorecon_recursive /data
+
 on fs
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
@@ -10,9 +26,14 @@ on fs
 # separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
     disabled
-    user root
-    group root
     seclabel u:r:recovery:s0
 
-on post-fs-data
+on boot
     start sbinqseecomd
+
+on property:ro.crypto.state=encrypted
+    stop sbinqseecomd
+    start sbinqseecomd
+
+on property:installkey.data=1
+    copy /data/system/entropy.dat /dev/urandom
