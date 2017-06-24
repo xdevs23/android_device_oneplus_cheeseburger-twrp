@@ -41,17 +41,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a9
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := \
-        androidboot.hardware=qcom \
-        ehci-hcd.park=3 \
-        sched_enable_hmp=1 \
-        sched_enable_power_aware=1 \
-        service_locator.enable=1 \
-        swiotlb=2048 \
-        androidboot.configfs=true \
-        androidboot.usbcontroller=a800000.dwc3 \
-        androidboot.selinucy=permissive \
-        lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=2048 buildvariant=user androidboot.selinux=permissive
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
@@ -61,17 +51,7 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
-ifneq ($(BUILDING_TWRP),)
-TARGET_KERNEL_CONFIG := twrp_cheeseburger_defconfig
-else
-TARGET_KERNEL_CONFIG := cheeseburger_defconfig
-endif
-TARGET_FRESHLY_COMPILED_DTBTOOL := true
-TARGET_KERNEL_BUILD_VARIANT := user
-TARGET_KERNEL_APPEND_DTB := true
-TARGET_COMPILE_WITH_MSM_KERNEL := true
-TARGET_KERNEL_VERSION := 4.4
+TARGET_PREBUILT_KERNEL := $(PLATFORM_PATH)/zImage.gz-dtb
 
 # Images
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
