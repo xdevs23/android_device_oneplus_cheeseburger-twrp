@@ -34,8 +34,6 @@ on fs
     chown system system /dev/ion
     export LD_LIBRARY_PATH /sbin:/vendor/lib64:vendor/lib64/hw:/system/vendor/lib64:/system/vendor/lib64/hw
     install_keyring
-    setprop ro.crypto.type file
-    setprop ro.crypto.state encrypted
 
 on boot
     # Update foreground and background cpusets
@@ -162,9 +160,6 @@ on enable-low-power
 on property:init.svc.recovery=running
     trigger enable-low-power
 
-#on property:ro.crypto.state=encrypted
-#    start sbinqseecomd
-
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
     disabled
@@ -172,5 +167,7 @@ service sbinqseecomd /sbin/qseecomd
     group root
     seclabel u:r:recovery:s0
 
+#on property:ro.crypto.state=encrypted
 on boot
     start sbinqseecomd
+
