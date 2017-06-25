@@ -26,3 +26,5 @@ sys.usb.rndis.func.name=gsi
 sys.usb.rmnet.func.name=gsi
 
 ro.product.model=cheeseburger
+ro.display.series=OnePlus 5
+
