@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="bitbucket"
+          fetch="https://bitbucket.org/" />
+  <project name="xdevs23/android_device_oneplus_cheeseburger-twrp" path="device/oneplus/cheeseburger" remote="github" revision="android-7.1" />
+  <project name="halogenOS/android_kernel_oneplus_msm8998" path="kernel/oneplus/msm8998" remote="github" revision="XOS-7.1" />
+  <project name="TeamWin/android_device_qcom_common" path="device/qcom/common" remote="github" revision="android-7.1" />
+  <project name="xanaxdroid/aarch64-6.3" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-6.3.1-kernel-linaro" remote="bitbucket" revision="linaro" />
+</manifest>
