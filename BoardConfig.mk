@@ -63,7 +63,8 @@ BOARD_KERNEL_CMDLINE := \
         androidboot.configfs=true \
         androidboot.usbcontroller=a800000.dwc3 \
         androidboot.selinux=permissive \
-        lpm_levels.sleep_disabled=1
+        lpm_levels.sleep_disabled=1 \
+        boot_cpus=0-7
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
