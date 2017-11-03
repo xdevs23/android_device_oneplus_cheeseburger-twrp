@@ -32,7 +32,7 @@ on fs
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
-    export LD_LIBRARY_PATH /sbin:/vendor/lib64:vendor/lib64/hw
+    export LD_LIBRARY_PATH /sbin:/vendor/lib64:/vendor/lib64/hw
     install_keyring
 
     write /proc/touchpanel/double_tap_enable 1
