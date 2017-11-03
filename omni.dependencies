@@ -2,13 +2,13 @@
   {
     "repository": "halogenOS/android_kernel_oneplus_msm8998",
     "target_path": "kernel/oneplus/msm8998",
-    "revision": "XOS-7.1",
+    "revision": "XOS-8.0",
     "remote": "github"
   },
   {
     "remote": "github",
     "repository": "TeamWin/android_device_qcom_common",
     "target_path": "device/qcom/common",
-    "revision": "android-7.1"
+    "revision": "android-8.0"
   }
 ]
