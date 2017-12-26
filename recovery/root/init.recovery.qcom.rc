@@ -37,10 +37,6 @@ on fs
 
     write /proc/touchpanel/double_tap_enable 1
 
-on boot
-    # Enable sched boost
-    write /proc/sys/kernel/sched_boost 1
-
 on early-fs
     start setup-decrypt
 
@@ -59,6 +55,12 @@ service setup-decrypt /sbin/setup_decrypt
     group root
     seclabel u:r:recovery:s0
 
-on property:ro.crypto.state=encrypted
+on boot
+    # Enable sched boost
+    write /proc/sys/kernel/sched_boost 1
+
     start sbinqseecomd
 
+    # Workaround for adb not coming up
+    setprop sys.usb.config mtp,adb
+    setprop sys.usb.config adb
