@@ -59,8 +59,6 @@ service setup-decrypt /sbin/setup_decrypt
     group root
     seclabel u:r:recovery:s0
 
-#on property:ro.crypto.state=encrypted
-#    start sbinqseecomd
-
-on boot
+on property:ro.crypto.state=encrypted
     start sbinqseecomd
+
