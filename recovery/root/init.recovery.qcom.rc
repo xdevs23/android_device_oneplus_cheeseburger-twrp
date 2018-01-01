@@ -48,7 +48,5 @@ service sbinqseecomd /sbin/qseecomd
     group root
     seclabel u:r:recovery:s0
 
-#on property:ro.crypto.state=encrypted
 on boot
     start sbinqseecomd
-
