@@ -6,5 +6,5 @@
   <remove-project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project name="android_bootable_recovery" path="bootable/recovery" remote="omnirom" revision="android-8.1" />
   <project name="android_external_busybox" path="external/busybox" remote="omnirom" revision="android-8.1" />
-  <project name="android_external_ntfs-3g" path="external/ntfs-3g" remote="omnirom" revision="android-8.1" />
+  <project name="xdevs23/android_external_ntfs-3g-twrp" path="external/ntfs-3g" remote="github" revision="android-8.1" />
 </manifest>
