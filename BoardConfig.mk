@@ -42,16 +42,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
-# Toolchain
-# Add this to local manifest:
-#   <remote name="bitbucket"
-#           fetch="https://bitbucket.org/" />
-#   <project name="xanaxdroid/aarch64-6.3" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-6.3.1-kernel-linaro" remote="bitbucket" revision="linaro" />
-TARGET_GCC_VERSION_ARM64 := 6.3.1-kernel-linaro
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-
-TARGET_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := $(realpath $(TOP))/prebuilts/gcc/$(strip $(HOST_OS))-x86/aarch64/$(TARGET_CROSS_COMPILE_PREFIX)$(TARGET_GCC_VERSION_ARM64)/bin
-
 # Kernel
 BOARD_KERNEL_CMDLINE := \
         androidboot.hardware=qcom \
