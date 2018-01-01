@@ -27,4 +27,7 @@ PRODUCT_COPY_FILES += \
 	$(foreach _,$(shell find $(PLATFORM_PATH)/recovery/root -type f),\
 		$_:$(subst $(PLATFORM_PATH),,$_))
 
+PRODUCT_PACKAGES += \
+    adbd
+
 TARGET_INCLUDED_DEVICE_MK := true
