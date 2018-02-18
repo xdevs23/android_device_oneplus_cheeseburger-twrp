@@ -51,8 +51,7 @@ BOARD_KERNEL_CMDLINE := \
         androidboot.usbcontroller=a800000.dwc3 \
         androidboot.selinux=permissive \
         lpm_levels.sleep_disabled=1 \
-        boot_cpus=0-7 \
-        mdss-dsi-panel-orientation=180
+        boot_cpus=0-7
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
